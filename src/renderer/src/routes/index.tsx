@@ -11,6 +11,7 @@ const Analyzer = lazy(() => import("@renderer/pages/analyzer"));
 const Utilities = lazy(() => import("@renderer/pages/utilities"));
 const Login = lazy(() => import("@renderer/pages/auth/login"));
 const ResetPassword = lazy(() => import("@renderer/pages/auth/resetPassword"));
+const SetPassword = lazy(() => import("@renderer/pages/auth/setPassword"));
 
 export const router = createBrowserRouter([
   {
@@ -26,4 +27,5 @@ export const router = createBrowserRouter([
   },
   { path: "/login", element: <Login /> },
   { path: "/reset-password", element: <ResetPassword /> },
+  { path: "/set-password", element: <SetPassword /> },
 ]);
