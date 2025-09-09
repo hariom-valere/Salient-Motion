@@ -9,6 +9,8 @@ function createWindow(): void {
     height: 670,
     show: false,
     autoHideMenuBar: true,
+    frame: false, // Remove window frame
+    titleBarStyle: 'hidden', // Hide the title bar and use custom controls
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
@@ -40,6 +42,23 @@ app.whenReady().then(() => {
   })
 
   ipcMain.on('ping', () => console.log('pong'))
+
+  ipcMain.on('minimize-window', () => {
+    BrowserWindow.getFocusedWindow()?.minimize()
+  })
+
+  ipcMain.on('maximize-window', () => {
+    const focusedWindow = BrowserWindow.getFocusedWindow()
+    if (focusedWindow?.isMaximized()) {
+      focusedWindow.unmaximize()
+    } else {
+      focusedWindow?.maximize()
+    }
+  })
+
+  ipcMain.on('close-window', () => {
+    BrowserWindow.getFocusedWindow()?.close()
+  })
 
   createWindow()
 
