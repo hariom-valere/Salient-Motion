@@ -8,7 +8,7 @@ const Connection: React.FC = () => {
       <p className="text-lg text-gray-400 mb-8 text-center">
         Please connect a device to your account to start managing your network connections.
       </p>
-      <button className="bg-[#2ECC71] text-black font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-[#28A745] transition-colors duration-200">
+      <button className="bg-[#1F7550] text-black font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-[#2ECC71] transition-colors duration-200">
         Connect Device
       </button>
     </div>
