@@ -171,3 +171,30 @@ code {
     display: none;
   }
 }
+
+
+/* For normal Input */
+.custom-input.ant-input {
+  @apply w-full rounded-full bg-[#141e1a]/80 border border-[#23332c]
+         px-6 py-4 text-white/90 placeholder-white/50 focus:outline-none
+         focus:ring-2 focus:ring-emerald-500/40
+         shadow-[inset_0_1px_0_rgba(255,255,255,0.05)];
+}
+
+/* For Password Input wrapper */
+.custom-input.ant-input-affix-wrapper {
+  @apply w-full rounded-full bg-[#141e1a]/80 border border-[#23332c]
+         px-6 py-4 text-white/90 focus-within:ring-2
+         focus-within:ring-emerald-500/40
+         shadow-[inset_0_1px_0_rgba(255,255,255,0.05)];
+}
+
+/* Inner input inside Password wrapper */
+.custom-input input.ant-input {
+  @apply bg-transparent text-white/90 placeholder-white/50 focus:outline-none;
+}
+
+/* Password suffix (eye icon) */
+.custom-input .ant-input-suffix {
+  @apply text-white/50 pr-2;
+}
