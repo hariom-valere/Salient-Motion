@@ -1,8 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from '@renderer/assets/logo.svg'
 import { Link } from 'react-router-dom'
+import PasswordInput from '@renderer/components/PasswordInput'
+import SuccessModal from '@renderer/components/SuccessModal'
 
 const SetPassword: React.FC = () => {
+  const [showModal, setShowModal] = useState(false)
+  const [newPassword, setNewPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
+
+  const handleSubmit = (e: React.FormEvent): void => {
+    e.preventDefault()
+    
+    // Show success modal
+    setShowModal(true)
+  }
+
+  const handleCloseModal = (): void => {
+    setShowModal(false)
+  }
+
   return (
     <div className="min-h-screen w-100 flex items-center justify-center px-4">
       <div className="w-full rounded-xl text-center ">
@@ -15,22 +32,22 @@ const SetPassword: React.FC = () => {
         <p className="text-white/70 text-center pb-5">Create your new password</p>
 
         <div className="flex items-center gap-2 text-sm ">
-          <form className="w-full">
+          <form className="w-full" onSubmit={handleSubmit}>
             <div className="w-full">
-              <input
-                type="password"
-                placeholder="New Password"
-                className="w-full rounded-full bg-[#141e1a]/80 border border-[#23332c] px-6 py-4 text-white/90 placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-emerald-500/40 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]"
+              <PasswordInput 
+                placeholder="New Password" 
+                value={newPassword}
+                onChange={(e) => setNewPassword(e.target.value)}
               />
             </div>
             <div className="w-full py-5 pb-2">
-              <input
-                type="password"
-                placeholder="Confirm New Password"
-                className="w-full rounded-full bg-[#141e1a]/80 border border-[#23332c] px-6 py-4 text-white/90 placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-emerald-500/40 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]"
+              <PasswordInput 
+                placeholder="Confirm New Password" 
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
               />
             </div>
-            <div className="w-full">
+            <div className="w-full pt-5">
               <button
                 type="submit"
                 className="bg-emerald-700 hover:bg-emerald-600 text-white font-semibold py-3 sm:py-4 text-base sm:text-lg transition-colors shadow-lg shadow-emerald-900/20 w-full rounded-full"
@@ -38,18 +55,26 @@ const SetPassword: React.FC = () => {
                 Set Password
               </button>
             </div>
-            <div className="w-full text-center  pt-3">
-                <Link to="/login" className="text-white hover:text-emerald-200 transition-colors">
-                  Back to Login
-                </Link>
-              </div>
+            <div className="w-full text-center pt-3">
+              <Link to="/login" className="text-white hover:text-emerald-200 transition-colors">
+                Back to Login
+              </Link>
+            </div>
           </form>
         </div>
       </div>
+
+      {/* Success Modal */}
+      <SuccessModal
+        isOpen={showModal}
+        onClose={handleCloseModal}
+        title="Your new password has been set."
+        message="You can now log in using your updated credentials."
+        buttonText="Go to Login"
+        buttonLink="/login"
+      />
     </div>
   )
 }
 
 export default SetPassword
-
-

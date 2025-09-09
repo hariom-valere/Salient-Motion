@@ -80,7 +80,7 @@ const ResetPassword: React.FC = () => {
                 We&apos;ve sent a password reset code to your registered email address.
               </p>
               <p className="mt-1 text-center text-white/60 text-xs">
-                Please check your inbox (and spam folder) to continue resetting your password.
+                Please check your inbox (and spam foldere ) to continue resetting your password.
               </p>
             </div>
             <button
