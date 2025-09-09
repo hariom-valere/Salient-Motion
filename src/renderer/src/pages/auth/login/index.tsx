@@ -16,10 +16,13 @@ const Login: React.FC = () => {
         <h1 className="mb-4 text-3xl font-semibold text-white text-center py-10 pb-5">Login</h1>
         <div className="flex items-center gap-2 text-sm">
           <Form className="w-full" onFinish={() => navigate('/connection')}>
-            <Form.Item>
+            <Form.Item rules={[{ required: true, message: 'email is required' }]} name="email">
               <Input type="text" placeholder="Email" />
             </Form.Item>
-            <Form.Item>
+            <Form.Item
+              rules={[{ required: true, message: 'password is required' }]}
+              name="password"
+            >
               <Input placeholder="Password" type="password" />
             </Form.Item>
             <div className="text-end pb-3 pt-0">
@@ -31,7 +34,7 @@ const Login: React.FC = () => {
               </Link>
             </div>
             <div>
-              <Button onClick={() => navigate('/connection')}>Login</Button>
+              <Button type="submit">Login</Button>
             </div>
           </Form>
         </div>

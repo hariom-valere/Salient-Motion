@@ -197,3 +197,28 @@ code {
 .custom-input .ant-input-suffix {
   @apply text-white/50 pr-2;
 }
+
+/* Keep background consistent when error */
+.custom-input.ant-input-status-error,
+.custom-input.ant-input-affix-wrapper-status-error {
+  @apply bg-[#141e1a]/80 border-red-500;
+}
+
+/* Keep inner input dark even on error */
+.custom-input.ant-input-status-error input {
+  @apply bg-transparent text-white/90 placeholder-white/50;
+}
+
+.ant-form-item-explain-error {
+  @apply text-red-500 text-sm text-start pl-4; /* left aligned with some padding */
+}
+
+.custom-input.ant-input-status-error,
+.custom-input.ant-input-affix-wrapper-status-error {
+  @apply rounded-full;
+}
+
+.custom-input.ant-input-status-error,
+.custom-input.ant-input-affix-wrapper-status-error {
+  background-color: #141e1acc !important; /* same as bg-[#141e1a]/80 */
+}
