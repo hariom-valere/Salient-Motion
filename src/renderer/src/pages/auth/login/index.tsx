@@ -1,11 +1,50 @@
+import logo from '@renderer/assets/logo.svg'
+import PasswordInput from '@renderer/components/PasswordInput'
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Login: React.FC = () => {
+  const navigate = useNavigate()
   return (
-    <div>
-      <p>Login</p>
-      <Link to="/">Go To Dashboard </Link> | <Link to="/reset-password">Reset Password</Link>
+    <div className="min-h-screen w-100 flex items-center justify-center px-4">
+      <div className="w-full rounded-xl text-center ">
+        <div className="flex justify-center">
+          <img src={logo} alt="logo" className=" w-64 h-12 mb-2" />
+        </div>
+        <h1 className="mb-4 text-3xl font-semibold text-white text-center py-10 pb-5">Login</h1>
+
+        {/* <p>Login to your account</p> */}
+        <div className="flex items-center gap-2 text-sm">
+          <form className="w-full" onSubmit={() => navigate('/connection')}>
+            <div>
+              <input
+                type="text"
+                placeholder="Email"
+                className="w-full rounded-full bg-[#141e1a]/80 border border-[#23332c] px-6 py-4 text-white/90 placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-emerald-500/40 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]"
+              />
+            </div>
+            <div className="py-5 pb-2">
+              <PasswordInput placeholder="Password" />
+            </div>
+            <div className="text-end py-3 pt-0">
+              <Link
+                to="/forget-password"
+                className="text-white hover:text-emerald-200 transition-colors border-b border-white text-sm"
+              >
+                Forget Password
+              </Link>
+            </div>
+            <div>
+              <button
+                type="submit"
+                className="bg-emerald-700 hover:bg-emerald-600 text-white font-semibold py-3 sm:py-4 text-base sm:text-lg transition-colors shadow-lg shadow-emerald-900/20 w-full rounded-full"
+              >
+                Login
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   )
 }
