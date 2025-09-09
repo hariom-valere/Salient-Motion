@@ -6,7 +6,7 @@ import { Link, useNavigate } from 'react-router-dom'
 const Login: React.FC = () => {
   const navigate = useNavigate()
   return (
-    <div className="min-h-screen w-100 flex items-center justify-center px-4">
+    <div className="min-h-screen w-100 flex items-center justify-center px-4 m-auto m-auto">
       <div className="w-full rounded-xl text-center ">
         <div className="flex justify-center">
           <img src={logo} alt="logo" className=" w-64 h-12 mb-2" />
