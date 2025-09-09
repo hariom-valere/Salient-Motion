@@ -12,7 +12,7 @@ const SetPassword: React.FC = () => {
         <h1 className="mb-2 text-3xl font-semibold text-white text-center py-10 pb-2">
           Set Password
         </h1>
-        <p className="text-white/70 text-center mb-6">Create your new password</p>
+        <p className="text-white/70 text-center pb-5">Create your new password</p>
 
         <div className="flex items-center gap-2 text-sm ">
           <form className="w-full">

@@ -76,10 +76,10 @@ const ResetPassword: React.FC = () => {
               <h2 className="text-xl sm:text-2xl font-semibold text-center">
                 Code Sent Successfully
               </h2>
-              <p className="mt-3 text-center text-white/80 text-sm">
+              <p className="mt-3 text-center text-white/80 text-sm pt-3">
                 We&apos;ve sent a password reset code to your registered email address.
               </p>
-              <p className="mt-1 text-center text-white/60 text-xs pt-1">
+              <p className="mt-1 text-center text-white/60 text-xs">
                 Please check your inbox (and spam folder) to continue resetting your password.
               </p>
             </div>
