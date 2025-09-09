@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import DashboardIcon from '../assets/Dashboard.svg'
 import ConfigurationIcon from '../assets/Configuration.svg'
@@ -7,12 +7,32 @@ import UtilitiesIcon from '../assets/Utilities.svg'
 import DeviceIcon from '../assets/device.svg'
 import AccountIcon from '../assets/user.svg'
 import SignOutIcon from '../assets/logout.svg'
+import LogoutModal from '../components/LogoutModal'
 
 import logo from '@renderer/assets/logo.svg'
 
 
 const Sidebar: React.FC = () => {
   const location = useLocation()
+  const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false)
+
+  const handleOpenLogoutModal = () => {
+    setIsLogoutModalOpen(true)
+  }
+
+  const handleCloseLogoutModal = () => {
+    setIsLogoutModalOpen(false)
+  }
+
+  const handleConfirmLogout = () => {
+    // Implement your logout logic here
+    console.log('User logged out!')
+    // For demonstration, redirecting to login after 1 second
+    setTimeout(() => {
+      window.location.href = '/login'
+    }, 1000)
+    setIsLogoutModalOpen(false)
+  }
 
   const navItems = [
     {
@@ -45,7 +65,7 @@ const Sidebar: React.FC = () => {
     },
     {
       name: 'Sign Out',
-      path: '/login',
+      onClick: handleOpenLogoutModal,
       icon: <img src={SignOutIcon} alt="Sign Out Icon" className="w-5 h-5" />
     }
   ]
@@ -92,18 +112,35 @@ const Sidebar: React.FC = () => {
         <ul>
           {bottomNavItems.map((item) => (
             <li key={item.name} className="mb-2">
-              <Link
-                to={item.path}
-                className={`flex items-center p-3 rounded-lg text-white hover:bg-gray-700 transition-colors duration-200
-                  ${location.pathname === item.path ? 'bg-[#1C2C26]' : ''}`}
-              >
-                <span className="mr-3">{item.icon}</span>
-                {item.name}
-              </Link>
+              {item.path ? (
+                <Link
+                  to={item.path}
+                  className={`flex items-center p-3 rounded-lg text-white hover:bg-gray-700 transition-colors duration-200
+                    ${location.pathname === item.path ? 'bg-[#1C2C26]' : ''}`}
+                >
+                  <span className="mr-3">{item.icon}</span>
+                  {item.name}
+                </Link>
+              ) : (
+                <button
+                  onClick={item.onClick}
+                  className={`flex items-center p-3 rounded-lg text-white hover:bg-gray-700 transition-colors duration-200 w-full text-left`}
+                >
+                  <span className="mr-3">{item.icon}</span>
+                  {item.name}
+                </button>
+              )}
             </li>
           ))}
         </ul>
       </div>
+      <LogoutModal
+        isOpen={isLogoutModalOpen}
+        onClose={handleCloseLogoutModal}
+        onConfirm={handleConfirmLogout}
+        title="Confirm Logout"
+        message="Are you sure you want to log out?"
+      />
     </div>
   )
 }
