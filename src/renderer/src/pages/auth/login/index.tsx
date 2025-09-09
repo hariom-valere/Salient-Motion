@@ -1,8 +1,10 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
 import logo from '@renderer/assets/logo.svg'
 import PasswordInput from '@renderer/components/PasswordInput'
+import React from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+
 const Login: React.FC = () => {
+  const navigate = useNavigate()
   return (
     <div className="min-h-screen w-100 flex items-center justify-center px-4">
       <div className="w-full rounded-xl text-center ">
@@ -13,8 +15,8 @@ const Login: React.FC = () => {
 
         {/* <p>Login to your account</p> */}
         <div className="flex items-center gap-2 text-sm">
-          <form className="w-full">
-            <div className="">
+          <form className="w-full" onSubmit={() => navigate('/connection')}>
+            <div>
               <input
                 type="text"
                 placeholder="Email"
@@ -26,13 +28,13 @@ const Login: React.FC = () => {
             </div>
             <div className="text-end py-3 pt-0">
               <Link
-                to="/reset-password"
+                to="/forget-password"
                 className="text-white hover:text-emerald-200 transition-colors border-b border-white text-sm"
               >
-                Reset Password
+                Forget Password
               </Link>
             </div>
-            <div className="">
+            <div>
               <button
                 type="submit"
                 className="bg-emerald-700 hover:bg-emerald-600 text-white font-semibold py-3 sm:py-4 text-base sm:text-lg transition-colors shadow-lg shadow-emerald-900/20 w-full rounded-full"

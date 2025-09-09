@@ -50,7 +50,7 @@ export const TIMINGS = {
 export const ROUTES = {
   login: '/login',
   setPassword: '/set-password',
-  resetPassword: '/reset-password',
+  resetPassword: '/forget-password',
   dashboard: '/dashboard'
 }
 

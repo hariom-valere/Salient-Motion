@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 interface SuccessModalProps {
   isOpen: boolean
@@ -50,12 +49,8 @@ const SuccessModal: React.FC<SuccessModalProps> = ({
 
         {/* Title and Message */}
         <div className="py-5">
-          <h2 className="text-xl sm:text-2xl font-semibold text-center">
-            {title}
-          </h2>
-          <p className="mt-3 text-center text-white/80 text-sm pt-3">
-            {message}
-          </p>
+          <h2 className="text-xl sm:text-2xl font-semibold text-center">{title}</h2>
+          <p className="mt-3 text-center text-white/80 text-sm pt-3">{message}</p>
         </div>
 
         {/* Button */}

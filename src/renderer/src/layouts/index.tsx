@@ -4,9 +4,11 @@ import Sidebar from './Sidebar'
 
 const AppLayout: React.FC = () => {
   return (
-    <div>
-      <Outlet/>
+    <div style={{display:"flex",justifyContent:"space-around"}}>
       <Sidebar />
+      <div>
+        <Outlet />
+      </div>
     </div>
   )
 }

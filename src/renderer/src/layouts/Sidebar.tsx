@@ -3,25 +3,31 @@ import { Link } from 'react-router-dom'
 
 const Sidebar: React.FC = () => {
   return (
-    <>
-      <ul style={{display:"flex", justifyContent:"space-around"}}>
+    <div>
+      <ul>
         <li>
-          <Link to="/dashboard">Dashboard</Link>|
+          <Link to="/dashboard">Dashboard</Link>
         </li>
         <li>
-          <Link to="/configuration">Configuration</Link>|
+          <Link to="/configuration">Configuration</Link>
         </li>
         <li>
-          <Link to="/analyzer">Analyzer</Link>|
+          <Link to="/analyzer">Analyzer</Link>
         </li>
         <li>
-          <Link to="/utilities">Utilities</Link>|
+          <Link to="/utilities">Utilities</Link>
         </li>
-          <li>
-          <Link to="/login">Go to login</Link>
+        <li>
+          <Link to="/connection">Connect Device</Link>
+        </li>
+        <li>
+          <Link to="/account">Account</Link>
+        </li>
+        <li>
+          <Link to="/login">Logout</Link>
         </li>
       </ul>
-    </>
+    </div>
   )
 }
 

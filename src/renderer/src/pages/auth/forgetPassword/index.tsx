@@ -1,8 +1,8 @@
+import logo from '@renderer/assets/logo.svg'
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import logo from '@renderer/assets/logo.svg'
 
-const ResetPassword: React.FC = () => {
+const ForgetPassword: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const navigate = useNavigate()
 
@@ -18,7 +18,7 @@ const ResetPassword: React.FC = () => {
           <img src={logo} alt="logo" className=" w-64 h-12 mb-2" />
         </div>
         <h1 className="mb-4 text-3xl font-semibold text-white text-center py-10 pb-5">
-          Reset Password
+          Forget Password
         </h1>
 
         {/* <p>Login to your account</p> */}
@@ -32,12 +32,12 @@ const ResetPassword: React.FC = () => {
               />
             </div>
 
-            <div className="">
+            <div>
               <button
                 type="submit"
                 className="bg-emerald-700 hover:bg-emerald-600 text-white font-semibold py-3 sm:py-4 text-base sm:text-lg transition-colors shadow-lg shadow-emerald-900/20 w-full rounded-full"
               >
-                Send Reset Code
+                Resend Code
               </button>
 
               <div className="w-full text-center  pt-3">
@@ -96,12 +96,7 @@ const ResetPassword: React.FC = () => {
         </div>
       )}
     </div>
-
-    // <div>
-    //   <p>ResetPassword</p>
-    //   <Link to="/login">Login</Link>
-    // </div>
   )
 }
 
-export default ResetPassword
+export default ForgetPassword
