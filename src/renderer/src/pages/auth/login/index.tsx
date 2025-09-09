@@ -21,10 +21,10 @@ const Login: React.FC = () => {
                 className="w-full rounded-full bg-[#141e1a]/80 border border-[#23332c] px-6 py-4 text-white/90 placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-emerald-500/40 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]"
               />
             </div>
-            <div className=" py-5 pb-2">
+            <div className="py-5 pb-2">
               <PasswordInput placeholder="Password" />
             </div>
-            <div className=" text-end py-3 pt-0">
+            <div className="text-end py-3 pt-0">
               <Link
                 to="/reset-password"
                 className="text-white hover:text-emerald-200 transition-colors border-b border-white text-sm"
