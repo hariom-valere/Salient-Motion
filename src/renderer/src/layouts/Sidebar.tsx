@@ -1,16 +1,18 @@
 import React, { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import DashboardIcon from '../assets/Dashboard.svg'
-import ConfigurationIcon from '../assets/Configuration.svg'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import AnalyzerIcon from '../assets/Analyzer.svg'
+import ConfigurationIcon from '../assets/Configuration.svg'
+import DashboardIcon from '../assets/Dashboard.svg'
 import UtilitiesIcon from '../assets/Utilities.svg'
 import DeviceIcon from '../assets/device.svg'
-import AccountIcon from '../assets/user.svg'
 import SignOutIcon from '../assets/logout.svg'
+import AccountIcon from '../assets/user.svg'
 import LogoutModal from '../components/LogoutModal'
 
 import logo from '@renderer/assets/logo.svg'
 import sidebar from '@renderer/assets/sidebar.svg'
+import { useAuth } from '@renderer/context/AuthContext'
+import { message } from 'antd'
 
 const Sidebar: React.FC = () => {
   const location = useLocation()
@@ -20,12 +22,16 @@ const Sidebar: React.FC = () => {
   const handleOpenLogoutModal = () => setIsLogoutModalOpen(true)
   const handleCloseLogoutModal = () => setIsLogoutModalOpen(false)
 
-  const handleConfirmLogout = () => {
-    console.log('User logged out!')
-    setTimeout(() => {
-      window.location.href = '/'
-    }, 1000)
-    setIsLogoutModalOpen(false)
+  const { logout } = useAuth()
+  const navigate = useNavigate()
+  const handleConfirmLogout = async () => {
+    try {
+      logout()
+      message.success('Logged Out!')
+      navigate('/')
+    } catch (error) {
+      message.error('Error Occurred While Logging out!')
+    }
   }
 
   const navItems = [

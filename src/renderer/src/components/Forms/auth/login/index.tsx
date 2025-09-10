@@ -13,7 +13,7 @@ const LoginForm: React.FC = () => {
     const success = await login(values.email, values.password)
     if (success) {
       message.success('Login successful!')
-      navigate('/dashboard') // go to dashboard after login
+      navigate('/connection')
     } else {
       message.error('Invalid email or password!')
     }
