@@ -26,8 +26,8 @@ interface UtilityCardProps {
 const UtilityCard: React.FC<UtilityCardProps> = ({ icon, title }) => {
   return (
     <div className="flex items-center justify-between py-5 px-6 bg-[#1F7550] rounded-full cursor-pointer hover:bg-opacity-80 transition-colors">
-      <div className="flex items-center">
-        <div className=''> <img src={icon} alt={title} className="w-8 h-8 mr-4 text-white" /></div>
+      <div className="flex items-center justify-center">
+        <div className='bg-neutral-500/40 h-12 w-12 rounded-full flex items-center justify-center  mr-4'> <img src={icon} alt={title} className="w-8 h-8 text-white" /></div>
         <span className="text-lg font-medium">{title}</span>
       </div>
       <span className="text-xl">›</span>

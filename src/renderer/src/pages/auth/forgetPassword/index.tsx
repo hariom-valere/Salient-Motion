@@ -18,7 +18,7 @@ const ForgetPassword: React.FC = () => {
           <img src={logo} alt="logo" className=" w-64 h-12 mb-2" />
         </div>
         <h1 className="mb-4 text-3xl font-semibold text-white text-center py-10 pb-5">
-          Forget Password
+          Forgot Password
         </h1>
 
         {/* <p>Login to your account</p> */}

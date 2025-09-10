@@ -55,7 +55,7 @@ const LogoutModal: React.FC<LogoutModalProps> = ({
         <div className="mt-6 flex justify-center space-x-4">
           <button
             onClick={onClose}
-            className="flex-1 bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 rounded-full shadow-lg shadow-gray-900/20"
+            className="flex-1 bg-[#121D18] hover:bg-green-500/10 text-white font-semibold py-3 rounded-full shadow-lg shadow-gray-900/20"
           >
             Cancel
           </button>
