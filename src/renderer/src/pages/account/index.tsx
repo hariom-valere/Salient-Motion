@@ -71,7 +71,7 @@ const Account: React.FC = () => {
         </button>
         <button
           className="px-6 py-3 rounded-full w-[29%] bg-[#20342B] text-white hover:bg-[#1F7550] transition-colors"
-          onClick={handleUpdateClick}
+          
         >
           Update
         </button>
