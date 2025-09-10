@@ -1,21 +1,31 @@
-import { contextBridge } from 'electron'
-import { electronAPI } from '@electron-toolkit/preload'
+// preload/index.ts
+import { contextBridge, ipcRenderer } from "electron";
 
-const api = {}
+const api = {
+  auth: {
+    login: (credentials: { email: string; password: string }) =>
+      ipcRenderer.invoke("login", credentials),
+    resetPassword: (email: string) =>
+      ipcRenderer.invoke("resetPassword", { email }),
+    forgetPassword: (email: string) =>
+      ipcRenderer.invoke("forgetPassword", { email }),
+    logout: () => ipcRenderer.invoke("logout"),
+  },
+  device: {
+    connect: (deviceId: string) =>
+      ipcRenderer.invoke("connectDevice", { deviceId }),
+    disconnect: () => ipcRenderer.invoke("disconnectDevice"),
+  },
+};
 
-// Use `contextBridge` APIs to expose Electron APIs to
-// renderer only if context isolation is enabled, otherwise
-// just add to the DOM global.
+// ✅ Expose to renderer in a safe way
 if (process.contextIsolated) {
   try {
-    contextBridge.exposeInMainWorld('electron', electronAPI)
-    contextBridge.exposeInMainWorld('api', api)
+    contextBridge.exposeInMainWorld("api", api);
   } catch (error) {
-    console.error(error)
+    console.error("Error exposing api:", error);
   }
 } else {
-  // @ts-ignore (define in dts)
-  window.electron = electronAPI
-  // @ts-ignore (define in dts)
-  window.api = api
+  // @ts-ignore
+  window.api = api;
 }

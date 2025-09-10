@@ -23,7 +23,7 @@ const ConfirmPasswordForm: React.FC<{ showModal: () => void }> = ({ showModal })
         name="confirmPassword"
         dependencies={['password']}
         rules={[
-          { required: true, message: 'Please confirm your password' },
+          { required: true, message: 'Please confirm your password!' },
           ({ getFieldValue }) => ({
             validator(_, value) {
               if (!value || getFieldValue('password') === value) {
