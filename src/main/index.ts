@@ -9,8 +9,8 @@ function createWindow(): void {
     height: 670,
     show: false,
     autoHideMenuBar: true,
-    frame: false, // Remove window frame
-    titleBarStyle: 'hidden', // Hide the title bar and use custom controls
+    frame: true, // Restore window frame
+    // titleBarStyle: 'hidden', // Remove custom title bar style
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),

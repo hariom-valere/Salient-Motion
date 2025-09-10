@@ -53,6 +53,7 @@
     "react-dom": "^19.1.0",
     "tailwindcss": "^4.1.13",
     "typescript": "^5.8.3",
-    "vite": "^7.0.5"
+    "vite": "^7.0.5",
+    "vite-plugin-svgr": "^4.5.0"
   }
 }
