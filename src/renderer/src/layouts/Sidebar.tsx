@@ -23,7 +23,7 @@ const Sidebar: React.FC = () => {
   const handleConfirmLogout = () => {
     console.log('User logged out!')
     setTimeout(() => {
-      window.location.href = '/login'
+      window.location.href = '/'
     }, 1000)
     setIsLogoutModalOpen(false)
   }

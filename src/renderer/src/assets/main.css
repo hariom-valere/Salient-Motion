@@ -231,3 +231,7 @@ code {
 :where(.css-dev-only-do-not-override-xepvsj) a:hover {
   color: #ffffff !important;
 }
+
+p, h2, h1, h3, h4, h5, h6{
+  color: #ffffff !important;
+}
