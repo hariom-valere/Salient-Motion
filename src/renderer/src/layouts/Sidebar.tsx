@@ -101,7 +101,7 @@ const Sidebar: React.FC = () => {
         <Link
           to="/connection"
           className={`flex items-center p-3 rounded-lg text-white transition-colors duration-200 mb-2
-            ${location.pathname === '/connection' ? 'bg-[#2ECC71] text-black' : 'bg-[#1C2C26] hover:bg-[#2ECC71]'}`}
+            ${location.pathname === '/connection' ? 'bg-[#1F7550] text-black' : 'bg-[#1C2C26] hover:bg-[#2ECC71]'}`}
         >
           <span className="mr-3"><img src={DeviceIcon} alt="Device Icon" className="w-5 h-5" /></span>
           Device
