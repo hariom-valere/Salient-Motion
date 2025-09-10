@@ -59,7 +59,7 @@ const ChangePasswordModal: React.FC<ChangePasswordModalProps> = ({ isOpen, onClo
             <button
               type="button"
               onClick={onClose}
-              className="mt-6 bg-gray-600 hover:bg-gray-700 text-white font-semibold py-3 w-full rounded-full shadow-lg shadow-gray-900/20"
+              className="mt-6  bg-[#121D18] hover:bg-green-500/10 text-white font-semibold py-3 w-full rounded-full shadow-lg shadow-gray-900/20"
             >
               Cancel
             </button>

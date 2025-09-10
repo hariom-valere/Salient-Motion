@@ -35,7 +35,9 @@ const Toggle: React.FC<{ checked?: boolean; labelLeft?: string; labelRight?: str
 
 const Section: React.FC<{ title: string; children: React.ReactNode }>
   = ({ title, children }) => (
-  <div className="bg-[#0C1C15] rounded-2xl border border-[#1E2C27] p-6">
+  <div className=" ">
+  {/* <div className="bg-[#0C1C15] rounded-2xl border border-[#1E2C27] p-6"> */}
+
     <h2 className="sr-only">{title}</h2>
     {children}
   </div>
@@ -90,7 +92,9 @@ const Configuration: React.FC = () => {
     ]
     return (
       <>
-        <div className="bg-[#0C1C15] rounded-2xl border border-[#1E2C27] mt-8">
+        <div className="bg-[#020B07] rounded-2xl  mt-8">
+        {/* <div className="bg-[#0C1C15] rounded-2xl border border-[#1E2C27] mt-8"> */}
+
           <div className="flex items-center justify-between px-8 py-6 border-b border-[#1E2C27]">
             <h1 className="text-2xl font-semibold">Select Workflow</h1>
             <button className="text-gray-300 hover:text-white transition-colors" aria-label="collapse">
@@ -111,7 +115,7 @@ const Configuration: React.FC = () => {
 
         <div className="flex items-center justify-between mt-10">
           <button className="px-12 py-3 rounded-full border border-[#2A3A34] text-gray-300 bg-transparent hover:bg-[#0F221A] transition-colors w-[40%]">Clear</button>
-          <button className="px-12 py-3 rounded-full bg-[#2A3A34] text-white border border-[#2A3A34] w-[40%]">Save</button>
+          <button className="px-12 py-3 rounded-full bg-[#3E4240] text-white border border-[#2A3A34] w-[40%]">Save</button>
         </div>
       </>
     )
@@ -120,16 +124,16 @@ const Configuration: React.FC = () => {
   return (
     <div className="w-full h-full bg-[#07150E] text-white">
       <div className="max-w-7xl mx-auto px-6 py-10">
-        <div className="bg-[#0C1C15] rounded-2xl border border-[#1E2C27] p-3">
-          <div className="flex bg-[#0E1B15] rounded-2xl ">
+        <div className="bg-[#0C1C15] rounded-full  p-2">
+          <div className="flex bg-[#0E1B15] rounded-full ">
             <button
-              className={`flex-1 h-12 rounded-xl font-medium ${activeTab === 'all' ? 'bg-[#2A8C66] text-white' : 'text-gray-300'}`}
+              className={`flex-1 h-12 rounded-full font-medium ${activeTab === 'all' ? 'bg-[#2A8C66] text-white' : 'text-gray-300'}`}
               onClick={() => setActiveTab('all')}
             >
               All Configurations
             </button>
             <button
-              className={`flex-1 h-12 rounded-xl font-medium ${activeTab === 'workflow' ? 'bg-[#2A8C66] text-white' : 'text-gray-300'}`}
+              className={`flex-1 h-12 rounded-full font-medium ${activeTab === 'workflow' ? 'bg-[#2A8C66] text-white' : 'text-gray-300'}`}
               onClick={() => setActiveTab('workflow')}
             >
               Workflow Configurations

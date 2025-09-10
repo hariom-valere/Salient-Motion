@@ -12,7 +12,7 @@ const Analyzer: React.FC = () => {
   return (
     <div className="w-full h-full bg-[#07150E] text-white">
       <div className="max-w-7xl mx-auto px-6 py-10">
-        <div className="bg-[#0C1C15] rounded-2xl border border-[#1E2C27]">
+        <div className="bg-[#020B07] rounded-2xl">
           <div className="flex items-center justify-between px-8 py-6 border-b border-[#1E2C27]">
             <h1 className="text-2xl font-semibold">Select Analysis</h1>
             <button
