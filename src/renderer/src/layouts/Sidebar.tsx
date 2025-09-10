@@ -10,6 +10,7 @@ import SignOutIcon from '../assets/logout.svg'
 import LogoutModal from '../components/LogoutModal'
 
 import logo from '@renderer/assets/logo.svg'
+import sidebar from '@renderer/assets/sidebar.svg'
 
 
 const Sidebar: React.FC = () => {
@@ -78,7 +79,10 @@ const Sidebar: React.FC = () => {
         <span className="ml-3 text-white text-lg font-semibold">SalientMotion</span>
       </div> */}
 
+        <div className='flex justify-beween items-center w-full'>
         <img src={logo} alt="logo" className=" w-36 h-12 " />
+        <a href=""> <img src={sidebar} alt="logo" className=" w-24 h-6" /></a>
+        </div>
 
       <nav className="flex-grow">
         <ul>
