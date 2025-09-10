@@ -1,15 +1,11 @@
 import logo from '@renderer/assets/logo.svg'
+import ForgotPasswordForm from '@renderer/components/Forms/auth/forgotPassword'
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
-const ForgetPassword: React.FC = () => {
+const ForgotPassword: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const navigate = useNavigate()
-
-  const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
-    event.preventDefault()
-    setIsModalOpen(true)
-  }
 
   return (
     <div className="min-h-screen w-100 flex items-center justify-center px-4 m-auto">
@@ -23,30 +19,7 @@ const ForgetPassword: React.FC = () => {
 
         {/* <p>Login to your account</p> */}
         <div className="flex items-center gap-2 text-sm">
-          <form className="w-full" onSubmit={handleSubmit}>
-            <div className="w-full py-5 pt-0">
-              <input
-                type="text"
-                placeholder="Email"
-                className="w-full rounded-full bg-[#141e1a]/80 border border-[#23332c] px-6 py-4 text-white/90 placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-emerald-500/40 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]"
-              />
-            </div>
-
-            <div>
-              <button
-                type="submit"
-                className="bg-emerald-700 hover:bg-emerald-600 text-white font-semibold py-3 sm:py-4 text-base sm:text-lg transition-colors shadow-lg shadow-emerald-900/20 w-full rounded-full"
-              >
-                Resend Code
-              </button>
-
-              <div className="w-full text-center  pt-3">
-                <Link to="/login" className="text-white hover:text-emerald-200 transition-colors">
-                  Back to Login
-                </Link>
-              </div>
-            </div>
-          </form>
+          <ForgotPasswordForm showModal={() => setIsModalOpen(true)} />
         </div>
       </div>
 
@@ -86,7 +59,7 @@ const ForgetPassword: React.FC = () => {
             <button
               onClick={() => {
                 setIsModalOpen(false)
-                navigate('/set-password')
+                navigate('/confirm-password')
               }}
               className="mt-6 bg-emerald-700 hover:bg-emerald-600 text-white font-semibold py-3 w-full rounded-full shadow-lg shadow-emerald-900/20"
             >
@@ -99,4 +72,4 @@ const ForgetPassword: React.FC = () => {
   )
 }
 
-export default ForgetPassword
+export default ForgotPassword

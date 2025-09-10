@@ -29,7 +29,7 @@ const Sidebar: React.FC = () => {
     console.log('User logged out!')
     // For demonstration, redirecting to login after 1 second
     setTimeout(() => {
-      window.location.href = '/login'
+      window.location.href = '/'
     }, 1000)
     setIsLogoutModalOpen(false)
   }
