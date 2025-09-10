@@ -7,7 +7,7 @@ const AppLayout: React.FC = () => {
     <div className="flex flex-col h-screen">
       <div className="flex flex-grow">
         <Sidebar />
-        <div className="flex-grow overflow-y-auto text-white">
+        <div className="flex-grow overflow-y-auto text-white sticky top-0">
           <Outlet />
         </div>
       </div>
