@@ -48,9 +48,9 @@ export const TIMINGS = {
 
 // Route names (single source of truth)
 export const ROUTES = {
-  login: '/login',
-  setPassword: '/set-password',
-  resetPassword: '/forget-password',
+  login: '/',
+  setPassword: '/confirm-password',
+  resetPassword: '/forgot-password',
   dashboard: '/dashboard'
 }
 

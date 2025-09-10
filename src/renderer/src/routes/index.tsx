@@ -12,15 +12,15 @@ const Utilities = lazy(() => import('@renderer/pages/utilities'))
 const Connection = lazy(() => import('@renderer/pages/connection'))
 const Account = lazy(() => import('@renderer/pages/account'))
 const Login = lazy(() => import('@renderer/pages/auth/login'))
-const ForgetPassword = lazy(() => import('@renderer/pages/auth/forgetPassword'))
-const SetPassword = lazy(() => import('@renderer/pages/auth/setPassword'))
+const ForgotPassword = lazy(() => import('@renderer/pages/auth/forgotPassword'))
+const ConfirmPassword = lazy(() => import('@renderer/pages/auth/confirmPassword'))
 
 export const router = createBrowserRouter([
   {
     path: '/',
     element: <AppLayout />,
     children: [
-      { index: true, element: <Dashboard /> },
+      // { index: true, element: <Dashboard /> },
       { path: 'dashboard', element: <Dashboard /> },
       { path: 'configuration', element: <Configuration /> },
       { path: 'analyzer', element: <Analyzer /> },
@@ -29,7 +29,7 @@ export const router = createBrowserRouter([
       { path: 'account', element: <Account /> }
     ]
   },
-  { path: '/login', element: <Login /> },
-  { path: '/forget-password', element: <ForgetPassword /> },
-  { path: '/set-password', element: <SetPassword /> }
+  {index: true, path: '/', element: <Login /> },
+  { path: '/forgot-password', element: <ForgotPassword /> },
+  { path: '/confirm-password', element: <ConfirmPassword /> }
 ])

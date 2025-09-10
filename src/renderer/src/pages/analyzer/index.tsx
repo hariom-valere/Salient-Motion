@@ -6,7 +6,7 @@ const Analyzer: React.FC = () => {
     { id: 'builtin', label: 'Builtin Test' },
     { id: 'faults', label: 'Read Lifetime Faults' },
     { id: 'pid', label: 'PID Tuning' },
-    { id: 'sensors', label: 'Sensors Configuration' }
+    // { id: 'sensors', label: 'Sensors Configuration' }
   ]
 
   return (

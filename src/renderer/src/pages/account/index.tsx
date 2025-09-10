@@ -16,10 +16,6 @@ const Account: React.FC = () => {
     setIsChangePasswordModalOpen(false)
   }
 
-  const handleUpdateClick = (): void => {
-    setIsUpdateAccountModalOpen(true)
-  }
-
   const handleConfirmUpdate = (): void => {
     console.log('Confirmed update:', { email, organization })
     // Here you would send the data to the backend
@@ -69,10 +65,7 @@ const Account: React.FC = () => {
         >
           Change Password
         </button>
-        <button
-          className="px-6 py-3 rounded-full w-[29%] bg-[#20342B] text-white hover:bg-[#1F7550] transition-colors"
-          
-        >
+        <button className="px-6 py-3 rounded-full w-[29%] bg-[#20342B] text-white hover:bg-[#1F7550] transition-colors">
           Update
         </button>
       </div>
