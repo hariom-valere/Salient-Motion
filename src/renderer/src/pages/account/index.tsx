@@ -58,13 +58,13 @@ const Account: React.FC = () => {
 
       <div className="flex space-x-4">
         <button
-          className="px-6 py-3 rounded-lg border border-red-500 text-red-500 hover:bg-red-500 hover:text-white transition-colors"
+          className="px-6 py-3 rounded-full border border-red-500 text-red-500 hover:bg-red-500 hover:text-white transition-colors"
           onClick={handleChangePasswordClick}
         >
           Change Password
         </button>
         <button
-          className="px-6 py-3 rounded-lg bg-gray-600 text-white hover:bg-gray-700 transition-colors"
+          className="px-6 py-3 rounded-full bg-[#1F7550] text-white hover:bg-gray-700 transition-colors"
           onClick={handleUpdateClick}
         >
           Update
