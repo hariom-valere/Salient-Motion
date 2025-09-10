@@ -34,37 +34,43 @@ const Account: React.FC = () => {
     <div className="flex flex-col items-start p-8 text-white">
       <h1 className="text-2xl font-bold mb-6">Account Details</h1>
 
-      <div className="flex flex-col mb-4 w-full max-w-md">
-        <label htmlFor="email" className="mb-2 text-lg">Email</label>
-        <input
-          type="email"
-          id="email"
-          className="w-full rounded-full bg-[#141e1a]/80 border border-[#23332c] px-6 py-4 text-white/90 placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-emerald-500/40 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+      <div className="w-full">
+        <div className="flex flex-row mb-4 w-[60%] items-center">
+          <label htmlFor="email" className="mb-2 text-lg  w-96">
+            Email
+          </label>
+          <input
+            type="email"
+            id="email"
+            className="w-full rounded-full bg-[#141e1a]/80 border border-[#23332c] px-6 py-4 text-white/90 placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-emerald-500/40 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+
+        <div className="flex flex-row mb-4 w-[60%] items-center">
+          <label htmlFor="organization" className="mb-2 text-lg w-96">
+            Organization
+          </label>
+          <input
+            type="text"
+            id="organization"
+            className="w-full rounded-full bg-[#141e1a]/80 border border-[#23332c] px-6 py-4 text-white/90 placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-emerald-500/40 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]"
+            value={organization}
+            onChange={(e) => setOrganization(e.target.value)}
+          />
+        </div>
       </div>
 
-      <div className="flex flex-col mb-8 w-full max-w-md">
-        <label htmlFor="organization" className="mb-2 text-lg">Organization</label>
-        <input
-          type="text"
-          id="organization"
-          className="w-full rounded-full bg-[#141e1a]/80 border border-[#23332c] px-6 py-4 text-white/90 placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-emerald-500/40 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]"
-          value={organization}
-          onChange={(e) => setOrganization(e.target.value)}
-        />
-      </div>
-
-      <div className="flex space-x-4">
+      <div className="flex space-x-4 mt-4 w-full">
         <button
-          className="px-6 py-3 rounded-full border border-red-500 text-red-500 hover:bg-red-500 hover:text-white transition-colors"
+          className="px-6 py-3 rounded-full w-[30%] border border-red-500 text-red-500 hover:bg-red-500 hover:text-white transition-colors"
           onClick={handleChangePasswordClick}
         >
           Change Password
         </button>
         <button
-          className="px-6 py-3 rounded-full bg-[#1F7550] text-white hover:bg-gray-700 transition-colors"
+          className="px-6 py-3 rounded-full w-[29%] bg-[#20342B] text-white hover:bg-[#1F7550] transition-colors"
           onClick={handleUpdateClick}
         >
           Update
@@ -88,4 +94,3 @@ const Account: React.FC = () => {
 }
 
 export default Account
- 
