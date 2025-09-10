@@ -35,7 +35,7 @@ const LoginForm: React.FC = () => {
       <div className="text-end pb-3 pt-0">
         <Link
           to="/forgot-password"
-          className="text-white hover:text-emerald-200 transition-colors border-b border-white text-sm"
+          className="text-white hover:text-emerald-200 transition-colors border-b border-white  text-sm"
         >
           Forgot Password?
         </Link>
