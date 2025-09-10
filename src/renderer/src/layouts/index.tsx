@@ -1,7 +1,7 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 import Sidebar from './Sidebar'
-import TitleBar from '../components/TitleBar'
+// import TitleBar from '../components/TitleBar'
 
 const AppLayout: React.FC = () => {
   return (

@@ -31,7 +31,7 @@ const Login: React.FC = () => {
                 to="/forget-password"
                 className="text-white hover:text-emerald-200 transition-colors border-b border-white text-sm"
               >
-                Forget Password
+                Forget Password?
               </Link>
             </div>
             <div>

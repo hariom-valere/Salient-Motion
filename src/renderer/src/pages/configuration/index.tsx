@@ -121,7 +121,7 @@ const Configuration: React.FC = () => {
     <div className="w-full h-full bg-[#07150E] text-white">
       <div className="max-w-7xl mx-auto px-6 py-10">
         <div className="bg-[#0C1C15] rounded-2xl border border-[#1E2C27] p-3">
-          <div className="flex bg-[#0E1B15] rounded-2xl p-2">
+          <div className="flex bg-[#0E1B15] rounded-2xl ">
             <button
               className={`flex-1 h-12 rounded-xl font-medium ${activeTab === 'all' ? 'bg-[#2A8C66] text-white' : 'text-gray-300'}`}
               onClick={() => setActiveTab('all')}
