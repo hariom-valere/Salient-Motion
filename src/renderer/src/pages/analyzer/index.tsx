@@ -40,7 +40,7 @@ const Analyzer: React.FC = () => {
 
       <div className="fixed right-8 top-14">
         <button
-          className="px-8 py-3 rounded-full bg-[#1E2C27] text-white border border-[#2A3A34] hover:bg-[#20362D] transition-colors shadow-lg"
+          className="px-15 py-3  rounded-full bg-[#1E2C27] text-white border border-[#2A3A34] hover:bg-[#20362D] transition-colors shadow-lg"
           onClick={() => console.log('Run clicked')}
         >
           Run

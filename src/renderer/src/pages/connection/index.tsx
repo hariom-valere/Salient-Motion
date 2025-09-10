@@ -2,7 +2,7 @@ import React from 'react'
 
 const Connection: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-[#0A1915] text-white p-4">
+    <div className="flex flex-col items-center justify-center h-screen bg-[#04100B] text-white p-4">
       <span className="text-6xl mb-6">🔌</span> {/* Placeholder for the device not connected icon */}
       <h1 className="text-4xl font-bold mb-4">Device not connected</h1>
       <p className="text-lg text-gray-400 mb-8 text-center">

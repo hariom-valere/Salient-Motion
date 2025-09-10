@@ -71,7 +71,7 @@ const Sidebar: React.FC = () => {
   ]
 
   return (
-    <div className="flex flex-col h-screen bg-[#04100B] w-64 text-white p-4 shadow-lg">
+    <div className="flex flex-col h-screen bg-[#0F1D17] w-64 text-white p-4 shadow-lg">
       {/* Remove logo and title from here as it's now in TitleBar */}
       {/* <div className="flex items-center justify-start mb-10 mt-4">
         <img src={Logo} alt="SalientMotion Logo" className="h-8" />

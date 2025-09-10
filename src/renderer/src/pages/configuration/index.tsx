@@ -122,7 +122,7 @@ const Configuration: React.FC = () => {
   }
 
   return (
-    <div className="w-full h-full bg-[#07150E] text-white">
+    <div className="w-full h-full bg-[#04100B] text-white">
       <div className="max-w-7xl mx-auto px-6 py-10">
         <div className="bg-[#0C1C15] rounded-full  p-2">
           <div className="flex bg-[#0E1B15] rounded-full ">
