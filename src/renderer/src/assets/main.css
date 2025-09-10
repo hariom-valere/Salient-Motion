@@ -222,3 +222,12 @@ code {
 .custom-input.ant-input-affix-wrapper-status-error {
   background-color: #141e1acc !important; /* same as bg-[#141e1a]/80 */
 }
+
+
+:where(.css-dev-only-do-not-override-xepvsj) a {
+  color: #ffffff !important;
+}
+
+:where(.css-dev-only-do-not-override-xepvsj) a:hover {
+  color: #ffffff !important;
+}

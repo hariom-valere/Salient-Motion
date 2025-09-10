@@ -80,3 +80,4 @@ export const VARIABLES: Variables = {
   ROUTES,
   CONSTANTS
 }
+
