@@ -58,16 +58,19 @@ ipcMain.handle('login', async (_event, { email, password }) => {
   return { success: false, message: 'Invalid credentials' }
 })
 
+// Forgot password
+ipcMain.handle('forgotPassword', async (_event, { email }) => {
+  console.log(`Forgot password for ${email}`)
+  if (email !== 'motiondev@gmail.com') {
+    return { success: false, message: 'Invalid email.' }
+  }
+  return { success: true, message: 'Temporary password sent to email.' }
+})
+
 // Reset password
 ipcMain.handle('resetPassword', async (_event, { email }) => {
   console.log(`Reset password for ${email}`)
   return { success: true, message: 'Password reset link sent!' }
-})
-
-// Forget password
-ipcMain.handle('forgetPassword', async (_event, { email }) => {
-  console.log(`Forget password for ${email}`)
-  return { success: true, message: 'Temporary password sent to email.' }
 })
 
 // Logout

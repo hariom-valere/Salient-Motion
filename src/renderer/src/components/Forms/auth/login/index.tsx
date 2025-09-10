@@ -6,6 +6,7 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 const LoginForm: React.FC = () => {
+  const [form] = Form.useForm()
   const navigate = useNavigate()
   const { login } = useAuth()
 
@@ -18,8 +19,9 @@ const LoginForm: React.FC = () => {
       message.error('Invalid email or password!')
     }
   }
+
   return (
-    <Form className="w-full" onFinish={handleSubmit}>
+    <Form className="w-full" form={form} onFinish={handleSubmit}>
       <Form.Item
         rules={[
           { required: true, message: 'Email is required!' },
@@ -32,16 +34,30 @@ const LoginForm: React.FC = () => {
       <Form.Item rules={[{ required: true, message: 'Password is required!' }]} name="password">
         <Input placeholder="Password" type="password" />
       </Form.Item>
+
       <div className="text-end pb-3 pt-0">
         <Link
           to="/forgot-password"
-          className="text-white hover:text-emerald-200 transition-colors border-b border-white  text-sm"
+          className="text-white hover:text-emerald-200 transition-colors border-b border-white text-sm"
         >
           Forgot Password?
         </Link>
       </div>
+
       <div>
-        <Button type="submit">Login</Button>
+        <Form.Item shouldUpdate>
+          {() => (
+            <Button
+              type="submit"
+              disabled={
+                !form.isFieldsTouched(true) ||
+                !!form.getFieldsError().filter(({ errors }) => errors.length).length
+              }
+            >
+              Login
+            </Button>
+          )}
+        </Form.Item>
       </div>
     </Form>
   )

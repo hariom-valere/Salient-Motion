@@ -33,7 +33,7 @@ const ConfirmPassword: React.FC = () => {
         title="Your new password has been set."
         message="You can now log in using your updated credentials."
         buttonText="Go to Login"
-        buttonLink="/login"
+        buttonLink="/"
       />
     </div>
   )

@@ -7,8 +7,8 @@ const api = {
       ipcRenderer.invoke("login", credentials),
     resetPassword: (email: string) =>
       ipcRenderer.invoke("resetPassword", { email }),
-    forgetPassword: (email: string) =>
-      ipcRenderer.invoke("forgetPassword", { email }),
+    forgotPassword: (email: string) =>
+      ipcRenderer.invoke("forgotPassword", { email }),
     logout: () => ipcRenderer.invoke("logout"),
   },
   device: {

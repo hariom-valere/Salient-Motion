@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 interface SuccessModalProps {
   isOpen: boolean
@@ -18,7 +19,7 @@ const SuccessModal: React.FC<SuccessModalProps> = ({
   buttonLink
 }) => {
   if (!isOpen) return null
-
+  const navigate = useNavigate()
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       <div className="absolute inset-0 bg-black/60" onClick={onClose} />
@@ -57,7 +58,9 @@ const SuccessModal: React.FC<SuccessModalProps> = ({
         <button
           onClick={() => {
             onClose()
-            window.location.href = buttonLink
+            if (Boolean(buttonLink)) {
+              navigate(buttonLink)
+            }
           }}
           className="mt-6 bg-emerald-700 hover:bg-emerald-600 text-white font-semibold py-3 w-full rounded-full shadow-lg shadow-emerald-900/20"
         >
