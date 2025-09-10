@@ -8,12 +8,12 @@ const Utilities: React.FC = () => {
   return (
     <div className="flex flex-col p-8 bg-dark-green-bg min-h-screen text-white">
       <h1 className="text-2xl font-bold mb-6">Utilities</h1>
-      <div className="grid grid-cols-2 gap-6 ">
-        <UtilityCard icon={FirmwareSvg} title="Update Firmware" />
-        <UtilityCard icon={ConfigSvg} title="Update Factory Config" />
-        <UtilityCard icon={ReleaseSvg} title="Flash Release Software" />
-        <UtilityCard icon={BackupSvg} title="Backup Factory Config" />
-      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <UtilityCard icon={FirmwareSvg} title="Update Firmware" />
+  <UtilityCard icon={ConfigSvg} title="Update Factory Config" />
+  <UtilityCard icon={ReleaseSvg} title="Flash Release Software" />
+  <UtilityCard icon={BackupSvg} title="Backup Factory Config" />
+</div>
     </div>
   )
 }
