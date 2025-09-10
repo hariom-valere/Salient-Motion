@@ -71,7 +71,7 @@ const Sidebar: React.FC = () => {
   ]
 
   return (
-    <div className="flex flex-col h-screen bg-[#0F1D17] w-64 text-white p-4 shadow-lg">
+    <div className="flex flex-col h-screen bg-[#0F1D17] w-64 text-white p-4 shadow-lg ">
       {/* Remove logo and title from here as it's now in TitleBar */}
       {/* <div className="flex items-center justify-start mb-10 mt-4">
         <img src={Logo} alt="SalientMotion Logo" className="h-8" />
@@ -86,8 +86,8 @@ const Sidebar: React.FC = () => {
             <li key={item.name} className="mb-2">
               <Link
                 to={item.path}
-                className={`flex items-center p-3 rounded-lg text-white hover:bg-gray-700 transition-colors duration-200
-                  ${location.pathname === item.path ? 'bg-[#1C2C26]' : ''}`}
+                className={`flex items-center p-3 rounded-lg text-white hover:bg-[#22392F] transition-colors duration-200
+                  ${location.pathname === item.path ? 'bg-[#1F7550]' : ''}`}
               >
                 <span className="mr-3">{item.icon}</span>
                 {item.name}
@@ -101,7 +101,7 @@ const Sidebar: React.FC = () => {
         <Link
           to="/connection"
           className={`flex items-center p-3 rounded-lg text-white transition-colors duration-200 mb-2
-            ${location.pathname === '/connection' ? 'bg-[#1F7550] text-black' : 'bg-[#1C2C26] hover:bg-[#2ECC71]'}`}
+            ${location.pathname === '/connection' ? 'bg-[#1F7550] text-black' : 'bg-[#] hover:bg-[#22392F]'}`}
         >
           <span className="mr-3"><img src={DeviceIcon} alt="Device Icon" className="w-5 h-5" /></span>
           Device
@@ -115,8 +115,8 @@ const Sidebar: React.FC = () => {
               {item.path ? (
                 <Link
                   to={item.path}
-                  className={`flex items-center p-3 rounded-lg text-white hover:bg-gray-700 transition-colors duration-200
-                    ${location.pathname === item.path ? 'bg-[#1C2C26]' : ''}`}
+                  className={`flex items-center p-3 rounded-lg text-white hover:bg-[#22392F] transition-colors duration-200
+                    ${location.pathname === item.path ? 'bg-[#1F7550]' : ''}`}
                 >
                   <span className="mr-3">{item.icon}</span>
                   {item.name}
@@ -124,7 +124,7 @@ const Sidebar: React.FC = () => {
               ) : (
                 <button
                   onClick={item.onClick}
-                  className={`flex items-center p-3 rounded-lg text-white hover:bg-gray-700 transition-colors duration-200 w-full text-left`}
+                  className={`flex items-center p-3 rounded-lg text-white hover:bg-[#22392F] transition-colors duration-200 w-full text-left`}
                 >
                   <span className="mr-3">{item.icon}</span>
                   {item.name}
