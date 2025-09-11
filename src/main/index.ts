@@ -2,15 +2,13 @@ import { app, BrowserWindow } from 'electron'
 import { registerIpcHandlers } from './ipc'
 import { createMainWindow } from './windows'
 
-let mainWindow: BrowserWindow | null = null
-
 app.whenReady().then(() => {
-  mainWindow = createMainWindow()
+  createMainWindow()
   registerIpcHandlers()
 
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) {
-      mainWindow = createMainWindow()
+      createMainWindow()
     }
   })
 })
