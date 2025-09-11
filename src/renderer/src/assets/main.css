@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 @import "tailwindcss";
 @import './base.css';
+
 
 body {
   /* display: flex;
@@ -9,6 +11,9 @@ body {
   /* background-image: url('./wavy-lines.svg'); */
   background-color: #04100B;
   user-select: none;
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 /* 
 code {
@@ -234,4 +239,5 @@ code {
 
 p, h2, h1, h3, h4, h5, h6{
   color: #ffffff !important;
+  font-family: "DM Sans", sans-serif;
 }
