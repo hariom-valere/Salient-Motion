@@ -1,17 +1,34 @@
 // main/index.ts
+import Database from 'better-sqlite3'
 import { app, BrowserWindow, ipcMain, shell } from 'electron'
 import path from 'path'
+import bcrypt from 'bcryptjs' // for password hashing
+
+const dbPath = path.join(app.getPath('userData'), 'auth.db')
+
+const db = new Database(dbPath)
+
+db.prepare(
+  `
+  CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    email TEXT UNIQUE,
+    passwordHash TEXT,
+    token TEXT,
+    updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP
+  )
+`
+).run()
 
 let mainWindow: BrowserWindow | null = null
 
-function createWindow() {
+const createWindow = () => {
   mainWindow = new BrowserWindow({
     width: 900,
     height: 670,
     show: false,
     autoHideMenuBar: true,
-    // ...(process.platform === "linux" ? { icon: path.join(__dirname, "icon.png") } : {}),
-    icon: path.join(__dirname, 'icon.png'),
+    ...(process.platform === 'linux' ? { icon: path.join(__dirname, 'icon.png') } : {}),
     webPreferences: {
       preload: path.join(__dirname, '../preload/index.js'),
       sandbox: false
@@ -50,12 +67,45 @@ app.on('window-all-closed', () => {
 
 // ================== IPC HANDLERS ==================
 
-// Login
+// Online login (API simulation)
 ipcMain.handle('login', async (_event, { email, password }) => {
-  if (email === 'motiondev@gmail.com' && password === 'Pwd123!@#') {
-    return { success: true, token: 'FAKE_JWT_TOKEN' }
+  const online = true // here you’d check API connectivity
+
+  if (online) {
+    // simulate server-side validation
+    if (email === 'motiondev@gmail.com' && password === 'Pwd123!@#') {
+      const token = 'FAKE_JWT_TOKEN'
+
+      // Hash password before caching
+      const passwordHash = await bcrypt.hash(password, 10)
+
+      // Upsert user into SQLite
+      db.prepare(
+        `
+        INSERT INTO users (email, passwordHash, token)
+        VALUES (?, ?, ?)
+        ON CONFLICT(email) DO UPDATE SET
+          passwordHash=excluded.passwordHash,
+          token=excluded.token,
+          updatedAt=CURRENT_TIMESTAMP
+      `
+      ).run(email, passwordHash, token)
+
+      return { success: true, token }
+    }
+    return { success: false, message: 'Invalid credentials' }
+  } else {
+    // Offline mode: validate against local cache
+    const row = db.prepare('SELECT * FROM users WHERE email = ?').get(email)
+    if (!row) return { success: false, message: 'User not found in offline cache' }
+
+    const match = await bcrypt.compare(password, row.passwordHash)
+    if (match) {
+      return { success: true, token: row.token, offline: true }
+    } else {
+      return { success: false, message: 'Invalid credentials (offline)' }
+    }
   }
-  return { success: false, message: 'Invalid credentials' }
 })
 
 // Forgot password

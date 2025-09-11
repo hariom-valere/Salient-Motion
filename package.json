@@ -25,6 +25,8 @@
     "@electron-toolkit/preload": "^3.0.2",
     "@electron-toolkit/utils": "^4.0.0",
     "antd": "^5.27.3",
+    "bcryptjs": "^3.0.2",
+    "better-sqlite3": "^12.2.0",
     "classnames": "^2.5.1",
     "electron-updater": "^6.3.9",
     "lucide-react": "^0.543.0",
