@@ -5,7 +5,7 @@ import UpdateAccountModal from '@renderer/components/UpdateAccountModal'
 const Account: React.FC = () => {
   const [isChangePasswordModalOpen, setIsChangePasswordModalOpen] = useState(false)
   const [isUpdateAccountModalOpen, setIsUpdateAccountModalOpen] = useState(false)
-  const [email, setEmail] = useState('test@salientmotion.com')
+  const [email, setEmail] = useState('motiondev@gmail.com')
   const [organization, setOrganization] = useState('Salient Motion')
 
   const handleChangePasswordClick = (): void => setIsChangePasswordModalOpen(true)

@@ -87,7 +87,7 @@ const Sidebar: React.FC = () => {
           <img src={DeviceIcon} alt="Device Icon" className="w-5 h-5" />
           {!isCollapsed && <span className="ml-3">Device</span>}
           {location.pathname === '/connection' && (
-            <span className="ml-auto w-3 h-3 bg-white rounded-full"></span>
+            <span className="ml-auto w-[16px] h-[16px] bg-[#BD1A1D] rounded-full border border-2"></span>
           )}
         </Link>
 
