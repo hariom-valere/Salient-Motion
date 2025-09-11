@@ -1,15 +1,15 @@
-import React from "react";
-import { Navigate, Outlet } from "react-router-dom";
-import { useAuth } from "@renderer/context/AuthContext";
+import { useAuth } from '@renderer/context/AuthContext'
+import React from 'react'
+import { Navigate, Outlet } from 'react-router-dom'
 
 const ProtectedRoute: React.FC = () => {
-  const { token } = useAuth();
+  const { token } = useAuth()
 
   if (!token) {
-    return <Navigate to="/" replace />;
+    return <Navigate to="/" replace />
   }
 
-  return <Outlet />;
-};
+  return <Outlet />
+}
 
-export default ProtectedRoute;
+export default ProtectedRoute

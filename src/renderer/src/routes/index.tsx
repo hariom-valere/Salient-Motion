@@ -3,6 +3,7 @@ import { createBrowserRouter } from 'react-router-dom'
 
 // Layout
 import ProtectedRoute from '@renderer/components/ProtectedRoute'
+import AuthRedirect from '@renderer/components/ProtectedRoute/AuthRedirect'
 import AppLayout from '@renderer/layouts'
 
 // Lazy-loaded pages
@@ -19,7 +20,7 @@ const ConfirmPassword = lazy(() => import('@renderer/pages/auth/confirmPassword'
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <Login />,
+    element: <AuthRedirect />,
     index: true
   },
   {
@@ -39,6 +40,7 @@ export const router = createBrowserRouter([
       }
     ]
   },
+  { path: '/login', element: <Login /> },
   { path: '/forgot-password', element: <ForgotPassword /> },
   { path: '/confirm-password', element: <ConfirmPassword /> }
 ])
