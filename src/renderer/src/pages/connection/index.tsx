@@ -1,7 +1,12 @@
 import React from 'react'
+import ConnectDevice from './ConnectDevice'
+import ConnectedDevice from './ConnectedDevice'
+import ConnectingDevice from './ConnectingDevice'
+import DeviceInfo from './DeviceInfo'
 
 const Connection: React.FC = () => {
   return (
+<<<<<<< HEAD
     <div className="flex flex-col items-center justify-center h-screen bg-[#04100B] text-white p-4">
       <span className="text-6xl mb-6">🔌</span> {/* Placeholder for the device not connected icon */}
       <h1 className="text-4xl font-bold mb-4">Device not connected</h1>
@@ -12,6 +17,14 @@ const Connection: React.FC = () => {
         Connect Device
       </button>
     </div>
+=======
+    <>
+      <ConnectDevice />
+      <ConnectingDevice />
+      <ConnectedDevice />
+      <DeviceInfo />
+    </>
+>>>>>>> 59e115a67bf53dab3f7951599d2cfb8ccb4b44fe
   )
 }
 
