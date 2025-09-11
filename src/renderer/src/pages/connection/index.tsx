@@ -8,7 +8,7 @@ const Connection: React.FC = () => {
   return (
     <>
       {/* <ConnectDevice /> */}
-      <ConnectingDevice />
+      {/* <ConnectingDevice /> */}
       {/* <ConnectedDevice /> */}
       {/* <DeviceInfo /> */}
     </>
