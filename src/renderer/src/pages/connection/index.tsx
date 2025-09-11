@@ -7,10 +7,10 @@ import DeviceInfo from './DeviceInfo'
 const Connection: React.FC = () => {
   return (
     <>
-      <ConnectDevice />
-      <ConnectingDevice />
-      <ConnectedDevice />
-      <DeviceInfo />
+      {/* <ConnectDevice /> */}
+      {/* <ConnectingDevice /> */}
+      {/* <ConnectedDevice /> */}
+      {/* <DeviceInfo /> */}
     </>
   )
 }
