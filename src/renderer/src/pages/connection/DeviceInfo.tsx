@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react'
 
-const DeviceInfo: React.FC = () => {
+const DeviceInfo: React.FC<{ onDisconnect: () => void }> = ({ onDisconnect }) => {
   return (
     <div className="h-screen w-full bg-[#04100B] text-white p-8">
       {/* Title */}
@@ -11,7 +11,10 @@ const DeviceInfo: React.FC = () => {
         {/* Header with name & button */}
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-lg font-semibold">Vortex Controller</h2>
-          <button className="px-4 py-2 border border-red-500 text-red-500 rounded-full hover:bg-red-500 hover:text-white transition-colors">
+          <button
+            onClick={onDisconnect}
+            className="px-4 py-2 border border-red-500 text-red-500 rounded-full hover:bg-red-500 hover:text-white transition-colors"
+          >
             Disconnect Device
           </button>
         </div>
@@ -33,7 +36,7 @@ const DeviceInfo: React.FC = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default DeviceInfo;
+export default DeviceInfo

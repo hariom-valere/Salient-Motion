@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react'
 
-const ConnectedDevice: React.FC = () => {
+const ConnectedDevice: React.FC<{ onNext: () => void }> = ({ onNext }) => {
   return (
     <div className="flex items-center justify-center h-screen bg-[#04100B] ">
       <div className="bg-[#04100B] text-white rounded-2xl shadow-lg p-8 w-full max-w-md border border-[#1C2B24]">
@@ -52,12 +52,15 @@ const ConnectedDevice: React.FC = () => {
         </div>
 
         {/* Button */}
-        <button className="mt-8 w-full bg-[#1F7550] hover:bg-[#1B8356] text-white font-medium py-3 rounded-full transition-colors">
+        <button
+          onClick={onNext}
+          className="mt-8 w-full bg-[#1F7550] hover:bg-[#1B8356] text-white font-medium py-3 rounded-full transition-colors"
+        >
           Go To My Device
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ConnectedDevice;
+export default ConnectedDevice

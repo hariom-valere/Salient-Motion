@@ -9,7 +9,7 @@ type ButtonProps = {
   className?: string
   onClick?: () => void
   icon?: React.ReactNode
-  iconPosition?: 'left' | 'right' // default left
+  iconPosition?: 'left' | 'right' 
   loading?: boolean
   disabled?: boolean
 }
