@@ -1,4 +1,3 @@
-// src/main/db/auth.db.ts
 import Database from 'better-sqlite3'
 import { app } from 'electron'
 import path from 'path'

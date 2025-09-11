@@ -1,12 +1,10 @@
 import { lazy } from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 
-// Layout
 import ProtectedRoute from '@renderer/components/ProtectedRoute'
 import AuthRedirect from '@renderer/components/ProtectedRoute/AuthRedirect'
 import AppLayout from '@renderer/layouts'
 
-// Lazy-loaded pages
 const Dashboard = lazy(() => import('@renderer/pages/dashboard'))
 const Configuration = lazy(() => import('@renderer/pages/configuration'))
 const Analyzer = lazy(() => import('@renderer/pages/analyzer'))

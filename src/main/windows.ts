@@ -1,4 +1,3 @@
-// src/main/windows.ts
 import { BrowserWindow, shell } from 'electron'
 import path from 'path'
 

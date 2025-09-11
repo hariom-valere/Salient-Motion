@@ -1,4 +1,3 @@
-// preload/index.ts
 import { contextBridge, ipcRenderer } from 'electron'
 
 const api = {
@@ -17,7 +16,6 @@ const api = {
   }
 }
 
-// ✅ Expose to renderer in a safe way
 if (process.contextIsolated) {
   try {
     contextBridge.exposeInMainWorld('api', api)

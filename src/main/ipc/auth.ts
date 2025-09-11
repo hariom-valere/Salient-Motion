@@ -1,4 +1,3 @@
-// src/main/ipc/auth.ts
 import bcrypt from 'bcryptjs'
 import { ipcMain } from 'electron'
 import { databases } from '../db'

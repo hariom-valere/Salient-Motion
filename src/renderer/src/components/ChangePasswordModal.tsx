@@ -13,13 +13,7 @@ const ChangePasswordModal: React.FC<ChangePasswordModalProps> = ({ isOpen, onClo
 
   const handleSubmit = (e: React.FormEvent): void => {
     e.preventDefault()
-    // Handle password change logic here
-    console.log({
-      currentPassword,
-      newPassword,
-      confirmPassword,
-    })
-    onClose() // Close modal after submission
+    onClose()
   }
 
   if (!isOpen) return null
