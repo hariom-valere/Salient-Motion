@@ -1,6 +1,7 @@
 import '@ant-design/v5-patch-for-react-19'
 import { Suspense } from 'react'
 import { RouterProvider } from 'react-router-dom'
+import { AuthProvider } from './context/AuthContext'
 import { router } from './routes'
 
 const Loading = (
@@ -12,7 +13,9 @@ const Loading = (
 const App = () => {
   return (
     <Suspense fallback={Loading}>
-      <RouterProvider router={router} />
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
     </Suspense>
   )
 }

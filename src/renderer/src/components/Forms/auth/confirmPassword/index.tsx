@@ -11,8 +11,35 @@ const ConfirmPasswordForm: React.FC<{ showModal: () => void }> = ({ showModal })
       <Form.Item
         name="password"
         rules={[
-          { required: true, message: 'Please enter your password' },
-          { min: 6, message: 'Password must be at least 6 characters' }
+          {
+            validator: (_, value) => {
+              if (!value) {
+                return Promise.reject(new Error('Please enter your password'))
+              }
+              if (value.length < 8) {
+                return Promise.reject(new Error('Password must be at least 8 characters long'))
+              }
+              if (!/[A-Z]/.test(value)) {
+                return Promise.reject(
+                  new Error('Password must contain at least one uppercase letter')
+                )
+              }
+              if (!/[a-z]/.test(value)) {
+                return Promise.reject(
+                  new Error('Password must contain at least one lowercase letter')
+                )
+              }
+              if (!/[0-9]/.test(value)) {
+                return Promise.reject(new Error('Password must contain at least one number'))
+              }
+              if (!/[!@#$%^&*(),.?":{}|<>]/.test(value)) {
+                return Promise.reject(
+                  new Error('Password must contain at least one special character')
+                )
+              }
+              return Promise.resolve()
+            }
+          }
         ]}
       >
         <Input placeholder="New Password" type="password" />
@@ -23,7 +50,7 @@ const ConfirmPasswordForm: React.FC<{ showModal: () => void }> = ({ showModal })
         name="confirmPassword"
         dependencies={['password']}
         rules={[
-          { required: true, message: 'Please confirm your password' },
+          { required: true, message: 'Please confirm your password!' },
           ({ getFieldValue }) => ({
             validator(_, value) {
               if (!value || getFieldValue('password') === value) {
