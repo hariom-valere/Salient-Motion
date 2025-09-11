@@ -1,9 +1,10 @@
 import React from 'react'
+import usb from '@renderer/assets/usb.svg'
 
 const ConnectDevice: React.FC<{ onNext: () => void }> = ({ onNext }) => {
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-[#04100B] text-white p-4">
-      <span className="text-6xl mb-6">🔌</span>{' '}
+      <span className="text-6xl mb-6"> <img src={usb} alt="usb" className="w-20 h-auto" /></span>{' '}
       {/* Placeholder for the device not connected icon */}
       <h1 className="text-4xl font-bold mb-4">Device not connected</h1>
       <p className="text-lg text-gray-400 mb-8 text-center">
