@@ -1,6 +1,7 @@
 import Button from '@renderer/components/Button'
 import Input from '@renderer/components/Input'
 import { useAuth } from '@renderer/context/AuthContext'
+import useOnlineStatus from '@renderer/hooks/useOnlineStatus'
 import { Form, message } from 'antd'
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
@@ -9,6 +10,7 @@ const LoginForm: React.FC = () => {
   const [form] = Form.useForm()
   const navigate = useNavigate()
   const { login } = useAuth()
+  const isOnline = useOnlineStatus()
 
   const handleSubmit = async (values: { email: string; password: string }) => {
     const success = await login(values.email, values.password)
@@ -35,14 +37,16 @@ const LoginForm: React.FC = () => {
         <Input placeholder="Password" type="password" />
       </Form.Item>
 
-      <div className="text-end pb-3 pt-0">
-        <Link
-          to="/forgot-password"
-          className="text-white hover:text-emerald-200 transition-colors border-b border-white text-sm"
-        >
-          Forgot Password?
-        </Link>
-      </div>
+      {isOnline && (
+        <div className="text-end pb-3 pt-0">
+          <Link
+            to="/forgot-password"
+            className="text-white hover:text-emerald-200 transition-colors border-b border-white text-sm"
+          >
+            Forgot Password?
+          </Link>
+        </div>
+      )}
 
       <div>
         <Form.Item shouldUpdate>
